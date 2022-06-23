@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+{% block body %}
+	<div class="container">
+        <div class="h2">
+        SOME OF OUR PRODUCTS
+        </div>
+        <p class="text-success">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. A molestias molestiae deserunt et distinctio reiciendis accusamus consequatur vero dolorum dignissimos? Doloremque molestiae sunt sapiente cupiditate voluptas aliquid iure perferendis repellat!
+        </p>
+        <hr />
+        <div class="container">
+          <div class="row">
+            {% for product in products %}
+              <div class="col-4">
+                <div class="card border border-secondary rounded shadow-lg p-5 my-3 bg-light">
+                  <p class="card-header fw-boldest">
+                  <strong><a class="text-decoration-none link-primary" href="/products/detail/?id={{product.id}}">{{product.name}}</strong></a> - <em>{{product.brand.name}}</em>
+                  </p>
+                  <div class="card-footer">
+                    {{product.description | raw}}
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>    
+		    </div>
+{% endblock %}
